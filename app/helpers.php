@@ -13,3 +13,15 @@ if(! function_exists('parseFileData')){
         ];
     }
 }
+
+/**
+ * 获取微秒数
+ * 
+ */
+if(! function_exists('microtime_float')){
+    function microtime_float(){
+        list($usec,$sec) = explode(" ",microtime());
+
+        return ((float)$usec + (float)$sec);
+    }
+}
