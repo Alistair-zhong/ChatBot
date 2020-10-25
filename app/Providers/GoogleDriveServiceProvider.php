@@ -23,7 +23,6 @@ class GoogleDriveServiceProvider extends ServiceProvider
             if (isset($config['teamDriveId'])) {
                 $options['teamDriveId'] = $config['teamDriveId'];
                 // $options['useDisplayPaths'] = true;
-                // // $options['parameters'] = ['quotaUser' => (string)$some_unique_per_user_id];
             }
 
             $adapter = new GoogleDriveAdapter($service, $config['folder'], $options);
