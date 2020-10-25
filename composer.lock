@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "51f6811a43e3ad22e941ad5775fc42ee",
+    "content-hash": "568713ee6832ec9877338222b0a7dbf6",
     "packages": [
         {
             "name": "alexusmai/laravel-file-manager",
@@ -1705,16 +1705,16 @@
         },
         {
             "name": "masbug/flysystem-google-drive-ext",
-            "version": "v1.1.4",
+            "version": "v1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/masbug/flysystem-google-drive-ext.git",
-                "reference": "b429ca0c193ac17f11e289c5049021ea6e0cc476"
+                "reference": "4675505a5df1c0e9849f161f31aa1bf950ee1728"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/masbug/flysystem-google-drive-ext/zipball/b429ca0c193ac17f11e289c5049021ea6e0cc476",
-                "reference": "b429ca0c193ac17f11e289c5049021ea6e0cc476",
+                "url": "https://api.github.com/repos/masbug/flysystem-google-drive-ext/zipball/4675505a5df1c0e9849f161f31aa1bf950ee1728",
+                "reference": "4675505a5df1c0e9849f161f31aa1bf950ee1728",
                 "shasum": ""
             },
             "require": {
@@ -1757,7 +1757,7 @@
                 "google-drive",
                 "translated"
             ],
-            "time": "2019-04-02T05:38:07+00:00"
+            "time": "2020-06-08T17:53:22+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -1996,16 +1996,16 @@
         },
         {
             "name": "nao-pon/flysystem-google-drive",
-            "version": "1.1.12",
+            "version": "1.1.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nao-pon/flysystem-google-drive.git",
-                "reference": "f55cd5edc52f767bb612c615189e2b52e459721d"
+                "reference": "bb812339ecf06540ed096f71403f10fcbcc590f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nao-pon/flysystem-google-drive/zipball/f55cd5edc52f767bb612c615189e2b52e459721d",
-                "reference": "f55cd5edc52f767bb612c615189e2b52e459721d",
+                "url": "https://api.github.com/repos/nao-pon/flysystem-google-drive/zipball/bb812339ecf06540ed096f71403f10fcbcc590f3",
+                "reference": "bb812339ecf06540ed096f71403f10fcbcc590f3",
                 "shasum": ""
             },
             "require": {
@@ -2041,7 +2041,7 @@
                 }
             ],
             "description": "Flysystem adapter for Google Drive",
-            "time": "2020-03-05T02:25:41+00:00"
+            "time": "2020-07-30T01:26:26+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -2170,10 +2170,16 @@
         {
             "name": "niro/uploads",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Alistair-zhong/uploads.git",
+                "reference": "03b66107a713705a5a07348a8508c4624fccc834"
+            },
             "dist": {
-                "type": "path",
-                "url": "/usr/local/var/www/Uploads",
-                "reference": "d1b7ae27ebb234fb15022e13e2c52f919f23fb2b"
+                "type": "zip",
+                "url": "https://api.github.com/repos/Alistair-zhong/uploads/zipball/03b66107a713705a5a07348a8508c4624fccc834",
+                "reference": "03b66107a713705a5a07348a8508c4624fccc834",
+                "shasum": ""
             },
             "require": {
                 "masbug/flysystem-google-drive-ext": "^1.1",
@@ -2210,10 +2216,7 @@
                     "email": "48372r@gmail.com"
                 }
             ],
-            "description": "file upload",
-            "transport-options": {
-                "symlink": true
-            }
+            "description": "file upload"
         },
         {
             "name": "opis/closure",
@@ -3102,6 +3105,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2019-09-17T06:23:10+00:00"
         },
         {

@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use App\WordsExtract\Extractor;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
@@ -15,6 +16,9 @@ use Illuminate\Support\Facades\Storage;
 |
 */
 
+Route::get('paginate', function () {
+    return User::paginate();
+});
 Route::get('/', function () {
     return view('welcome');
 });
@@ -64,9 +68,10 @@ Route::get('test', function () {
         // $str = str_replace( '$', '\$', $str );
         // $str = str_replace( '"', '\"', $str );
         // $str = str_replace( "'", "\'", $str );
-        $str = str_replace(['/', '.', ':', '?', ' ', '-', '+', '*', '(', ')', '[', ']', '{', '}', '^', '$', '"', "'"],
-                            ['\\\\', '\/', '\.', '\:', '\?', '\ ', '\-', '\+', '\*', '\(', '\)', '\[', '\]', '\{', '\}', '\^', '\$', '\"', "\'"],
-                            $str
+        $str = str_replace(
+            ['/', '.', ':', '?', ' ', '-', '+', '*', '(', ')', '[', ']', '{', '}', '^', '$', '"', "'"],
+            ['\\\\', '\/', '\.', '\:', '\?', '\ ', '\-', '\+', '\*', '\(', '\)', '\[', '\]', '\{', '\}', '\^', '\$', '\"', "\'"],
+            $str
         );
     }
 
@@ -74,8 +79,4 @@ Route::get('test', function () {
     // 获取毫秒数
     $duration = ($end_signle - $start_single) * 1000;
     dd($duration);
-});
-
-Route::post('nnn/{name}', function ($name) {
-    dd($name);
 });

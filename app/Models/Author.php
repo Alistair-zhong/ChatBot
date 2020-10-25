@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Author extends Model
 {
+    public function __construct($table = null)
+    {
+        if (!is_null($table)) {
+            $this->table = $table;
+        }
+    }
+
     protected $guarded = [];
 
     public function posts()
