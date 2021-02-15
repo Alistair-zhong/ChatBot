@@ -12,6 +12,7 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+        'http://127.0.0.1:8001/postman',
+        'http://localhost:8001/webhook',
     ];
 }

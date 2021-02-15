@@ -1,7 +1,13 @@
 <?php
 
 use App\User;
+use Illuminate\Http\Request;
+use Minishlink\WebPush\VAPID;
 use App\WordsExtract\Extractor;
+use Minishlink\WebPush\WebPush;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Hash;
+use Minishlink\WebPush\Subscription;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
@@ -60,4 +66,42 @@ Route::get('test', function () {
     // 获取毫秒数
     $duration = ($end_signle - $start_single) * 1000;
     dd($duration);
+});
+
+// [
+//     "publicKey" => "BB1En1xaOfKYHrp7TmnEPd5tCO8-JcNIBhFyPFd_C0gJkir54sK5iuMdkPoM6iUKeb6u3PiEpefxtxmPGl8rHr0",
+//     "privateKey" => "-RYI8VWE0p3sAa4BZjSx27nZKzopscvS1t7lWCm--PQ",
+//   ]
+Route::post('postman', function (Request $request) {
+    dd($request->all());
+});
+
+Route::post('webhook', function (Request $request) {
+    $inputs = $request->all();
+    Log::info(json_encode($inputs));
+    if ($inputs['object'] !== 'page') {
+        return response('object error', 404);
+    }
+
+    foreach ($inputs['entry'] as $key => $value) {
+        Log::info($value['messaging'][0]);
+    }
+    return response('good');
+});
+
+Route::get('webhook', function (Request $request) {
+    $verify_token = 'webhook';
+
+    $inputs = $request->all();
+    $mode = $inputs['hub_mode'];
+    $token = $inputs['hub_verify_token'];
+    $challenge = $inputs['hub_challenge'];
+
+    if ($mode && $token) {
+        if ($mode === 'subscribe' && $token === $verify_token) {
+            Log::info('WEBHOOK_VERIFIED');
+            return response($challenge);
+        }
+    }
+    return response('not verified', 403);
 });

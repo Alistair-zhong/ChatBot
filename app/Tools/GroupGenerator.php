@@ -37,6 +37,7 @@ class GroupGenerator
         }
     }
 
+
     public function formatDay($day)
     {
         switch ($day) {
